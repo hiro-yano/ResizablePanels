@@ -77,7 +77,7 @@ class ResizablePanels extends React.Component<{},Props> {
           [currentPanel - 1]: (panels[currentPanel - 1] || 0) + delta
         },
         delta: 0,
-        currentPanel: 0
+        currentPanel: currentPanel
       }))
     }
   }
@@ -86,7 +86,8 @@ class ResizablePanels extends React.Component<{},Props> {
     if (this.state.isDragging) {
       const delta = event.clientX - this.state.initialPos
       this.setState({
-        delta: delta
+        delta: delta,
+        
       })
     }
   }
